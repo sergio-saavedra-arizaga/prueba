@@ -17,6 +17,8 @@ jobs:
 
       # 2. Clonar el repositorio que contiene el Dockerfile
       - name: Clone Dockerfile Repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.CR_PASSWORD }}
         run: |
           git clone https://github.com/sergio-saavedra-arizaga/argocd-test.git dockerfile-repo
 
