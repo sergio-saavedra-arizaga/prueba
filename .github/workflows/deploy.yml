@@ -14,6 +14,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # 2. Clonar el repositorio que contiene el Dockerfile
+      - name: Clone Dockerfile Repository
+        run: |
+          git clone https://github.com/sergio-saavedra-arizaga/argocd-test.git dockerfile-repo
+
       # 2. Iniciar sesión en GitHub Container Registry (o Docker Hub)
       - name: Log in to Container Registry
         uses: docker/login-action@v2
@@ -25,7 +30,7 @@ jobs:
       # 3. Construir y etiquetar la imagen Docker
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/tu-usuario/prueba:latest .
+          docker build -t ghcr.io/tu-usuario/prueba:latest -f dockerfile-repo/Dockerfile .
 
       # 4. Subir la imagen Docker al registro
       - name: Push Docker Image
