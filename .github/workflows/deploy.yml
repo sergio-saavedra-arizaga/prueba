@@ -38,4 +38,4 @@ jobs:
       # 4. Subir la imagen Docker al registro
       - name: Push Docker Image
         run: |
-          docker push ghcr.io/tu-usuario/prueba:latest
+          docker push ghcr.io/sergio-saavedra-arizaga/prueba:latest
