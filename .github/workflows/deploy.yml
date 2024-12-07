@@ -33,7 +33,7 @@ jobs:
       # 3. Construir y etiquetar la imagen Docker
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/tu-usuario/prueba:latest -f dockerfile-repo/Dockerfile .
+          docker build -t ghcr.io/sergio-saavedra-arizaga/prueba:latest -f dockerfile-repo/Dockerfile .
 
       # 4. Subir la imagen Docker al registro
       - name: Push Docker Image
