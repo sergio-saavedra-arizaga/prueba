@@ -20,7 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CR_PASSWORD }}
         run: |
-          git clone https://github.com/sergio-saavedra-arizaga/argocd-test.git dockerfile-repo
+          git clone https://x-access-token:${GITHUB_TOKEN}@github.com/sergio-saavedra-arizaga/argocd-test.git dockerfile-repo
 
       # 2. Iniciar sesión en GitHub Container Registry (o Docker Hub)
       - name: Log in to Container Registry
